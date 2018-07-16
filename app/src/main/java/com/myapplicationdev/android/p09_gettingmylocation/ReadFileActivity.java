@@ -51,7 +51,6 @@ public class ReadFileActivity extends AppCompatActivity {
         File targetFile = new File(folderLocation, "data.txt");
 
         if (targetFile.exists() == true) {
-            int num = 0;
             al.clear();
             try {
                 FileReader reader = new FileReader(targetFile);
@@ -60,7 +59,6 @@ public class ReadFileActivity extends AppCompatActivity {
                 String line = br.readLine();
                 while (line != null) {
                     al.add(line+"");
-                    num++;
                     line = br.readLine();
                 }
                 br.close();
@@ -71,7 +69,7 @@ public class ReadFileActivity extends AppCompatActivity {
                 Toast.makeText(ReadFileActivity.this, "Failed to read!", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
-            tvNum.setText("Number of records:"+num);
+            tvNum.setText("Number of records:"+al.size());
             aa.notifyDataSetChanged();
         }
     }
