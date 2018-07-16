@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     Toast.makeText(MainActivity.this,data,Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(MainActivity.this,ReadFileActivity.class);
+                    startActivity(i);
                     Log.d("content", data);
                 }
             }
